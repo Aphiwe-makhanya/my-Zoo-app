@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"><img src="images/logo.png"/></div>
+<div id="tabs-top">
+    <a href="animals.html">ANIMALS</a>
+    <a href="index.html">MAP</a>
+    <a href="places.html">PLACES</a>
+</div>
+<div id="main">
+    <div id="content">
+        <div id="info-box-full">
+            <img src="images/panda.jpg"/>
+            <h3>PANDAS</h3>
+            <p>Our adorable pandas love to snack on bamboo and then roll over for a nap. They’re calm, fluffy, and always entertaining.</p>
+            <p>Fun Fact: A panda can eat up to 12 hours a day!</p>
+            <strong><p>WHERE WILL YOU FIND THEM</p></strong>
+            <p>Lounging under shady trees in pen P7.</p>
+        </div>
+    </div>
+</div>
+<div id="tabs-bottom">
+    <a href="#">WEATHER</a>
+    <a href="#">FEEDBACK</a>
+</div>
+<script>
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.href && this.href !== '#') {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => { window.location = this.href; }, 500);
+        }
+    });
+});
+</script>
+</body>
+</html>

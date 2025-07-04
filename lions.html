@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"><img src="images/logo.png"/></div>
+<div id="tabs-top">
+    <a href="animals.html">ANIMALS</a>
+    <a href="index.html">MAP</a>
+    <a href="places.html">PLACES</a>
+</div>
+<div id="main">
+    <div id="content">
+        <div id="info-box-full">
+            <img src="images/lion.jpg"/>
+            <h3>LIONS</h3>
+            <p>Lions are the kings of our zoo. They rule their territory with majestic power and loud roars that echo through the park.</p>
+            <p>Fun Fact: A lion’s roar can be heard up to 8 km away!</p>
+            <strong><p>WHERE WILL YOU FIND THEM</p></strong>
+            <p>Relaxing under trees in pen L10, near the large baobab.</p>
+        </div>
+    </div>
+</div>
+<div id="tabs-bottom">
+    <a href="#">WEATHER</a>
+    <a href="#">FEEDBACK</a>
+</div>
+<script>
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.href && this.href !== '#') {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => { window.location = this.href; }, 500);
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"><img src="images/logo.png"/></div>
+<div id="tabs-top">
+    <a href="animals.html">ANIMALS</a>
+    <a href="index.html">MAP</a>
+    <a href="places.html">PLACES</a>
+</div>
+<div id="main">
+    <div id="content">
+        <div id="info-box-full">
+            <img src="images/gorilla.jpg"/>
+            <h3>GORILLAS</h3>
+            <p>Massive yet gentle, our gorillas are the thinkers of the jungle, living in tight family groups led by a mighty silverback.</p>
+            <p>Fun Fact: Gorillas build a new nest from leaves every single night.</p>
+            <strong><p>WHERE WILL YOU FIND THEM</p></strong>
+            <p>In the shaded enclave of pen G9, often grooming or playing.</p>
+        </div>
+    </div>
+</div>
+<div id="tabs-bottom">
+    <a href="#">WEATHER</a>
+    <a href="#">FEEDBACK</a>
+</div>
+<script>
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.href && this.href !== '#') {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => { window.location = this.href; }, 500);
+        }
+    });
+});
+</script>
+</body>
+</html>

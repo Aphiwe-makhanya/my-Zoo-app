@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* Simple modal styles */
+    .modal { display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.4); }
+    .modal-content { background:#fff; margin:10% auto; padding:20px; border-radius:10px; width:90%; max-width:400px; box-shadow:0 4px 16px rgba(0,0,0,0.3); position:relative; }
+    .close { position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer; color:#333; }
+    .places-list img { width:60px; vertical-align:middle; margin-right:10px; border-radius:6px; }
+    .places-list h4 { display:inline; margin-left:10px; }
+    .places-list p { margin:0 0 10px 70px; color:#555; font-size:14px; }
+    </style>
+    </head>
+    <body>
+        <div id="header">
+            <img src="images/logo.png"/>
+        </div>
+        <div id="tabs-top">
+            <a href="animals.html">ANIMALS</a>
+            <a href="#" id="map-btn">MAP</a>
+            <a href="#" id="places-btn">PLACES</a>
+        </div>
+        <div id="main-home">
+            <img src="images/map.png" width="100%"/>
+        </div>
+        <div id="tabs-bottom">
+            <a href="#" id="weather-btn">WEATHER</a>
+            <a href="#" id="feedback-btn">FEEDBACK</a>
+        </div>
+
+        <!-- WEATHER MODAL -->
+        <div class="modal" id="weather-modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('weather-modal')">&times;</span>
+            <h3>Today's Weather</h3>
+            <img src="images/partly-cloudy.png" style="width:50px;vertical-align:middle;"> <span style="font-size:22px;">Partly Cloudy</span>
+            <p>Temperature: 24°C<br>Humidity: 60%<br>Perfect day for a zoo visit!</p>
+          </div>
+        </div>
+
+        <!-- PLACES MODAL -->
+        <div class="modal" id="places-modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('places-modal')">&times;</span>
+            <h3>Places in Safari Zoo</h3>
+            <div class="places-list">
+              <div>
+                <img src="images/amphitheatre-tn.png"/> <h4>Amphitheatre</h4>
+                <p>Catch an educational and entertaining event</p>
+              </div>
+              <div>
+                <img src="images/coffee-shop-tn.png"/> <h4>Coffee Shop</h4>
+                <p>Grab a hot drink and a snack</p>
+              </div>
+              <div>
+                <img src="images/insect-house-tn.png"/> <h4>Insect House</h4>
+                <p>Discover the world of bugs</p>
+              </div>
+              <div>
+                <img src="images/restaurant-tn.png"/> <h4>Restaurant</h4>
+                <p>Enjoy a meal with a view of the zoo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FEEDBACK MODAL -->
+        <div class="modal" id="feedback-modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('feedback-modal')">&times;</span>
+            <h3>Feedback</h3>
+            <form onsubmit="event.preventDefault(); alert('Thank you for your feedback!'); closeModal('feedback-modal');">
+              <label for="feedback-text">Your comments:</label><br>
+              <textarea id="feedback-text" rows="4" style="width:100%;"></textarea><br>
+              <button type="submit" style="margin-top:10px;">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <script>
+        function closeModal(id) {
+          document.getElementById(id).style.display = 'none';
+        }
+        document.getElementById('weather-btn').onclick = function() {
+          document.getElementById('weather-modal').style.display = 'block';
+        };
+        document.getElementById('places-btn').onclick = function() {
+          document.getElementById('places-modal').style.display = 'block';
+        };
+        document.getElementById('feedback-btn').onclick = function() {
+          document.getElementById('feedback-modal').style.display = 'block';
+        };
+        // Optional: close modal when clicking outside content
+        window.onclick = function(event) {
+          ['weather-modal','places-modal','feedback-modal'].forEach(function(id){
+            var modal = document.getElementById(id);
+            if(event.target === modal) modal.style.display = 'none';
+          });
+        };
+        </script>
+    </body>
+</html>

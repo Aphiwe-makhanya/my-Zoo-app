@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header"><img src="images/logo.png"/></div>
+<div id="tabs-top">
+    <a href="animals.html">ANIMALS</a>
+    <a href="index.html">MAP</a>
+    <a href="places.html">PLACES</a>
+</div>
+<div id="main">
+    <div id="content">
+        <div id="info-box-full">
+            <img src="images/monkey.jpg"/>
+            <h3>MONKEYS</h3>
+            <p>Cheeky and playful, our monkeys will keep you laughing with their clever tricks and jumps from tree to tree.</p>
+            <p>Fun Fact: They can solve simple puzzles and love stealing fruit if you’re not careful!</p>
+            <strong><p>WHERE WILL YOU FIND THEM</p></strong>
+            <p>At the lively pen M12, near the snack stand — watch your popcorn!</p>
+        </div>
+    </div>
+</div>
+<div id="tabs-bottom">
+    <a href="#">WEATHER</a>
+    <a href="#">FEEDBACK</a>
+</div>
+<script>
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.href && this.href !== '#') {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => { window.location = this.href; }, 500);
+        }
+    });
+});
+</script>
+</body>
+</html>

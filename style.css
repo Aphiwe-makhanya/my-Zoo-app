@@ -1,0 +1,152 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: #f9f6f1;
+    transition: opacity 0.8s ease-in-out;
+}
+
+/* Fade effect for page transitions */
+body.fade-out {
+    opacity: 0;
+}
+
+/* ============ HEADER ============= */
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    height: 80px;
+    background-image: url('images/wood-bg.png');
+    background-repeat: repeat-x;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#header img {
+    display: block;
+    margin: auto;
+    height: 70%;
+    padding-top: 15px;
+}
+
+/* ============ TOP TABS ============ */
+#tabs-top {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    height: 40px;
+    background-color: darkgreen;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#tabs-top a {
+    float: left;
+    display: block;
+    width: 33%;
+    height: 35px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+/* ============ MAIN CONTENT ============ */
+#main-home, #main {
+    margin-top: 120px;
+    padding-bottom: 60px;
+}
+
+#main {
+    background: url('images/map-blur.png') repeat-y;
+}
+
+/* ============ INFO BOXES ============ */
+#content {
+    padding: 10px;
+}
+
+a.info-box {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.9);
+    width: 90%;
+    display: block;
+    margin: 15px auto;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+    perspective: 1000px;
+}
+
+a.info-box:hover {
+    transform: scale(1.03) rotateY(5deg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.info-box img {
+    height: 70px;
+    margin: 10px;
+    float: left;
+}
+
+.info-box h3, .info-box p {
+    margin: 0;
+    color: #5b381b;
+}
+
+/* Arrow on right */
+.info-box img.right {
+    float: right;
+    margin-top: 25px;
+    height: 40px;
+}
+
+/* ============ FULL PAGE INFO ============ */
+#info-box-full {
+    background: rgba(255, 255, 255, 0.95);
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#info-box-full img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#info-box-full h3 {
+    text-align: center;
+    color: #3a220d;
+    margin-top: 10px;
+}
+
+/* ============ BOTTOM TABS ============ */
+#tabs-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    height: 40px;
+    background-color: forestgreen;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+}
+
+#tabs-bottom a {
+    float: left;
+    display: block;
+    width: 50%;
+    height: 35px;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
